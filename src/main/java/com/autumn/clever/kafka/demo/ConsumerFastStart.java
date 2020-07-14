@@ -1,4 +1,4 @@
-package com.autumn.clever.kafka;
+package com.autumn.clever.kafka.demo;
 
 import org.apache.kafka.clients.consumer.ConsumerRecord;
 import org.apache.kafka.clients.consumer.ConsumerRecords;
@@ -14,7 +14,7 @@ import java.util.Properties;
  * @Date: 2020/6/2 17:43
  */
 public class ConsumerFastStart {
-    public static final String brokerList = "localhost:9092";
+    public static final String brokerList = "192.168.1.11:9092";
     public static final String topic = "topic-demo";
     public static final String groupId = "group.demo";
 
