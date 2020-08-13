@@ -12,7 +12,7 @@ import java.util.Map;
  * 生产者拦截器既可以用来在消费发送前做一些准备工作，比如按照某个规则个过滤不符合要求的消息、
  * 修改消息的内容等，也可以用来在发送回调逻辑前做一些定制化的要求，比如统计类工作。
  * <p>
- * PS：这三个方法中抛出的一场都会被捕捉并记录到日志中。
+ * PS：这三个方法中抛出的异常都会被捕捉并记录到日志中。
  *
  * @Author: zhangqiuying
  * @Date: 2020/7/14 22:23
@@ -31,7 +31,6 @@ public class ProducerInterceptorPrefix implements ProducerInterceptor<String, St
     @Override
     public ProducerRecord<String, String> onSend(ProducerRecord<String, String> record) {
         String modifiedValue = "prefix1-" + record.value();
-
         return new ProducerRecord<>(record.topic(), record.partition(),
                 record.timestamp(), record.key(), modifiedValue, record.headers());
     }
@@ -64,6 +63,5 @@ public class ProducerInterceptorPrefix implements ProducerInterceptor<String, St
 
     @Override
     public void configure(Map<String, ?> map) {
-
     }
 }

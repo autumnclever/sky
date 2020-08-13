@@ -12,8 +12,8 @@ import java.util.Properties;
  * @Date: 2020/6/2 17:21
  */
 public class ProducerStart {
-    public static final String brokerList = "192.168.1.11:9092";
-    public static final String topic = "topic-demo";
+    public static final String brokerList = "172.19.163.135:9092";
+    public static final String topic = "topic-serializer";
 
     public static void main(String[] args) {
         Properties properties = new Properties();
@@ -23,7 +23,7 @@ public class ProducerStart {
         // 配置生产者客户端参数并创建 KafkaProducer 实例
         KafkaProducer<String, Company> producer = new KafkaProducer<>(properties);
 
-        Company company = Company.builder().name("spring").address("beijing").build();
+        Company company = Company.builder().name("maoyanyule").address("beijing").build();
         // 构建所需要发送的消息
         ProducerRecord<String, Company> record = new ProducerRecord<>(topic, company);
         // 发送消息

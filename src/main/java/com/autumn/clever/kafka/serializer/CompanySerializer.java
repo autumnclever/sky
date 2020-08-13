@@ -16,7 +16,7 @@ public class CompanySerializer implements Serializer<Company> {
     private static final String ENCODE = "UTF-8";
 
     /**
-     * 配置当前类，
+     * 配置当前类
      *
      * @param configs
      * @param isKey

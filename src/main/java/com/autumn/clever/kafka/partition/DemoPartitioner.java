@@ -21,6 +21,7 @@ public class DemoPartitioner implements Partitioner {
         List<PartitionInfo> partitions = cluster.partitionsForTopic(topic);
         int numPartitions = partitions.size();
         if (keyBytes == null) {
+            // 如果 key 为 null，定义 counter，对分区数进行取余
             return counter.getAndIncrement() % numPartitions;
         } else {
             return Utils.toPositive(Utils.murmur2(keyBytes)) % numPartitions;
@@ -29,11 +30,9 @@ public class DemoPartitioner implements Partitioner {
 
     @Override
     public void close() {
-
     }
 
     @Override
     public void configure(Map<String, ?> map) {
-
     }
 }

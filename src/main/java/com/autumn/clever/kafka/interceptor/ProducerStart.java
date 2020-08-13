@@ -12,8 +12,8 @@ import java.util.Properties;
  * @Date: 2020/6/2 17:21
  */
 public class ProducerStart {
-    public static final String brokerList = "192.168.1.11:9092";
-    public static final String topic = "topic-demo";
+    public static final String brokerList = "172.19.163.135:9092";
+    public static final String topic = "topic-inter";
 
     public static void main(String[] args) {
         Properties properties = new Properties();

@@ -3,7 +3,6 @@ package com.autumn.clever.kafka.demo;
 import org.apache.kafka.clients.consumer.ConsumerRecord;
 import org.apache.kafka.clients.consumer.ConsumerRecords;
 import org.apache.kafka.clients.consumer.KafkaConsumer;
-import org.apache.kafka.common.serialization.StringDeserializer;
 
 import java.time.Duration;
 import java.util.Collections;
@@ -14,9 +13,9 @@ import java.util.Properties;
  * @Date: 2020/6/2 17:43
  */
 public class ConsumerFastStart {
-    public static final String brokerList = "192.168.1.11:9092";
-    public static final String topic = "topic-demo";
-    public static final String groupId = "group.demo";
+    public static final String brokerList = "172.19.163.135:9092";
+    public static final String topic = "topic-little-demo";
+    public static final String groupId = "group.little.demo";
 
     public static void main(String[] args) {
         Properties properties = new Properties();
@@ -35,6 +34,7 @@ public class ConsumerFastStart {
                 System.out.println(record.value());
                 break;
             }
+            break;
         }
     }
 }

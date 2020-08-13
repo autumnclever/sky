@@ -15,9 +15,9 @@ import java.util.Properties;
  * @Date: 2020/6/2 17:43
  */
 public class ConsumerStart {
-    public static final String brokerList = "192.168.1.11:9092";
-    public static final String topic = "topic-demo";
-    public static final String groupId = "group.demo";
+    public static final String brokerList = "172.19.163.135:9092";
+    public static final String topic = "topic-serializer";
+    public static final String groupId = "group.topic.serializer";
 
     public static void main(String[] args) {
         Properties properties = new Properties();
@@ -30,7 +30,9 @@ public class ConsumerStart {
         KafkaConsumer consumer = new KafkaConsumer<>(properties);
         // 订阅主题
         consumer.subscribe(Collections.singletonList(topic));
-        while (true) {
+
+        int i = 0;
+        while (i++ < 10) {
             ConsumerRecords<String, Company> records = consumer.poll(Duration.ofMillis(1000));
             for (ConsumerRecord<String, Company> record : records) {
                 if (record.value() != null) {

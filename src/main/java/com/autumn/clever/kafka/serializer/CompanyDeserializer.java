@@ -33,11 +33,23 @@ public class CompanyDeserializer implements Deserializer<Company> {
         String name, address;
 
         nameLen = buffer.getInt();
-        byte[] nameBytes = new byte[nameLen];
+        final byte[] nameBytes = new byte[nameLen];
         buffer.get(nameBytes);
+
         addressLen = buffer.getInt();
         byte[] addressBytes = new byte[addressLen];
         buffer.get(addressBytes);
+
+//        ByteBuffer buffer = ByteBuffer.wrap(data);
+//        int nameLen, addressLen;
+//        String name, address;
+//
+//        nameLen = buffer.getInt();
+//        byte[] nameBytes = new byte[nameLen];
+//        buffer.get(nameBytes);
+//        addressLen = buffer.getInt();
+//        byte[] addressBytes = new byte[addressLen];
+//        buffer.get(addressBytes);
         try {
             name = new String(nameBytes, ENCODE);
             address = new String(addressBytes, ENCODE);
