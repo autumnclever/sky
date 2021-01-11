@@ -2,9 +2,9 @@ package com.autumn.clever.leetcode.list;
 
 /**
  * @Author: zhangqiuying
- * @Date: 2021/1/10 下午3:21
+ * @Date: 2020/8/22 12:55
  */
-public class 删除排序链表中的重复元素2 {
+public class 删除排序链表中的重复元素II {
     public static void main(String[] args) {
         ListNode node1 = new ListNode(1);
         ListNode node2 = new ListNode(1);
@@ -29,18 +29,29 @@ public class 删除排序链表中的重复元素2 {
     }
 
     public static ListNode deleteDuplicates(ListNode head) {
-        if (head == null) {
+        if (head == null || head.next == null) {
             return head;
         }
 
-        ListNode result = head;
-        while (head != null) {
-            if (head.next != null && head.val == head.next.val) {
-                head.next = head.next.next;
+        ListNode newHead = new ListNode(0);
+        ListNode result = newHead;
+        newHead.next = head;
+        while (newHead != null) {
+            ListNode next = newHead.next;
+            if (next == null) {
+                break;
+            }
+            if (next.next == null || next.val != next.next.val) {
+                newHead.next = next;
+                newHead = newHead.next;
                 continue;
             }
-            head = head.next;
+
+            while (next.next != null && next.val == next.next.val) {
+                next = next.next;
+            }
+            newHead.next = next.next;
         }
-        return result;
+        return result.next;
     }
 }

@@ -3,10 +3,14 @@ package com.autumn.clever.sort;
 import java.util.Arrays;
 
 /**
+ * 算法思想：
+ * 从上到下依次拆开
+ * 从小到上依次合并
+ *
  * @Author: zhangqiuying
- * @Date: 2020/9/9 21:10
+ * @Date: 2021/1/10 下午12:03
  */
-public class 归并排序 {
+public class 归并排序6 {
     public static void main(String[] args) {
         int[] arr = {3, 9, 6, 2, 1, 8};
 //        int[] arr = {3, 8};
@@ -15,27 +19,27 @@ public class 归并排序 {
     }
 
     /**
-     * 递归拆分
+     * 把数组从中间结点拆开
      *
-     * @param arr   待拆分数组
-     * @param left  待拆分数组最小下标
-     * @param right 待拆分数组最大下标
+     * @param arr
+     * @param left
+     * @param right
      */
     public static void mergeSort(int[] arr, int left, int right) {
-        // 中间下标
+        // 找到数组中间的位置
         int mid = (left + right) / 2;
         if (left < right) {
-            // 递归拆分左边
+            // 拆开左边
             mergeSort(arr, left, mid);
-            // 递归拆分右边
+            // 拆开右边
             mergeSort(arr, mid + 1, right);
-            // 合并左右
+            // 拆好的数组，进排序
             sort(arr, left, mid, right);
         }
     }
 
     /**
-     * 合并两个有序子序列
+     * 对 arr 排序，
      *
      * @param arr   待合并数组
      * @param left  待合并数组最小下标
@@ -43,31 +47,36 @@ public class 归并排序 {
      * @param right 待合并数组最大下标
      */
     public static void sort(int[] arr, int left, int mid, int right) {
-        // 临时数组，用来保存每次合并之后的结果
+        // 初始化临时数组，用于临时保存每次合并之后的数组
         int[] temp = new int[right - left + 1];
+        // 左边的起始位置
         int i = left;
+        // 右边的起始位置
         int j = mid + 1;
-        // 临时数组的初始下标
+        // temp 数组的索引
         int k = 0;
-        //这个 while 循环能够初步筛选出待合并的两个子序列中的较小数
+        // 循环，看左边、右边谁比较小，就放到temp里面去
         while (i <= mid && j <= right) {
-            if (arr[i] <= arr[j]) {
+            if (arr[i] < arr[j]) {
                 temp[k++] = arr[i++];
             } else {
                 temp[k++] = arr[j++];
             }
         }
-        // 将左边序列中剩余的数放入临时数组
+
+        // 左边没有遍历完，就依次放到temp里面去
         while (i <= mid) {
             temp[k++] = arr[i++];
         }
-        // 将右边序列中剩余的数放入临时数组
+
+        // 右边没有遍历完，就依次放到temp里面去
         while (j <= right) {
             temp[k++] = arr[j++];
         }
-        // 将临时数组中的元素位置对应到真真实的数组中
+
+        // 把temp排序好的，放到真实的arr对应的位置中
         for (int m = 0; m < temp.length; m++) {
-            arr[m + left] = temp[m];
+            arr[left + m] = temp[m];
         }
     }
 }
