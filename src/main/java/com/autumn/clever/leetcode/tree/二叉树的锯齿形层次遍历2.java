@@ -1,17 +1,15 @@
 package com.autumn.clever.leetcode.tree;
 
+
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
 /**
- * 给定一个二叉树，返回其节点值的锯齿形层序遍历。
- * （即先从左往右，再从右往左进行下一层遍历，以此类推，层与层之间交替进行）。
- *
  * @Author: zhangqiuying
- * @Date: 2020/9/4 11:00
+ * @Date: 2021/1/13 下午4:40
  */
-public class 二叉树的锯齿形层次遍历 {
+public class 二叉树的锯齿形层次遍历2 {
     public static void main(String[] args) {
         TreeNode root = new TreeNode(3);
         TreeNode node1 = new TreeNode(9);
@@ -32,37 +30,33 @@ public class 二叉树的锯齿形层次遍历 {
     }
 
     public static List<List<Integer>> zigzagLevelOrder(TreeNode root) {
-        List<List<Integer>> result = new ArrayList<>();
+        List<List<Integer>> results = new ArrayList<>();
         if (root == null) {
-            return result;
+            return results;
         }
-        LinkedList<TreeNode> nodes = new LinkedList<>();
-        nodes.add(root);
+        LinkedList<TreeNode> list = new LinkedList();
+        list.add(root);
         boolean direction = true;
-        while (!nodes.isEmpty()) {
-            LinkedList<Integer> values = new LinkedList<>();
-            int size = nodes.size();
+        while (!list.isEmpty()) {
+            LinkedList<Integer> result = new LinkedList<>();
+            int size = list.size();
             for (int i = 0; i < size; i++) {
-                // 移除并且返回链表的头结点
-                TreeNode node = nodes.poll();
+                TreeNode node = list.remove();
                 if (direction) {
-                    // 如果是正向，添加到value的结尾
-                    values.add(node.val);
+                    result.add(node.val);
                 } else {
-                    // 如果是反向，添加到value的头部
-                    values.addFirst(node.val);
+                    result.addFirst(node.val);
                 }
-
                 if (node.left != null) {
-                    nodes.add(node.left);
+                    list.add(node.left);
                 }
                 if (node.right != null) {
-                    nodes.add(node.right);
+                    list.add(node.right);
                 }
             }
-            result.add(values);
+            results.add(result);
             direction = !direction;
         }
-        return result;
+        return results;
     }
 }

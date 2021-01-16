@@ -17,9 +17,11 @@ public class 二叉搜索树的后序遍历序列 {
         node1.right = node4;
         int[] values1 = {1, 2, 3, 4, 5};
         int[] values2 = {4, 8, 6, 12, 16, 14, 10};
+        int[] values3 = {1, 2, 5, 10, 6, 9, 4, 3};
 
-        System.out.println(verifyPostorder(values1));
+//        System.out.println(verifyPostorder(values1));
 //        System.out.println(verifyPostorder(values2));
+        System.out.println(verifyPostorder(values3));
     }
 
     public static boolean verifyPostorder(int[] postorder) {

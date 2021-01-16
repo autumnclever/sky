@@ -18,8 +18,10 @@ public class 链表的中间结点2 {
         node1.next = node2;
         node2.next = node3;
         node3.next = node4;
-        node4.next = node5;
+//        node4.next = node5;
 //        node5.next = node6;
+
+        ListNode head = node1;
 
         ListNode result = middleNode(node1);
         while (result != null) {
@@ -27,23 +29,36 @@ public class 链表的中间结点2 {
             result = result.next;
         }
 
+        ListNode result2 = middleNode2(head);
+        while (result2 != null) {
+            System.out.println(result2.val);
+            result2 = result2.next;
+        }
     }
 
     public static ListNode middleNode(ListNode head) {
         if (head == null || head.next == null) {
             return head;
         }
-
         ListNode fast = head;
         ListNode slow = head;
-        while (fast != null) {
-            if (fast.next == null) {
-                return slow;
-            }
+        while (fast != null && fast.next != null) {
             fast = fast.next.next;
             slow = slow.next;
         }
+        return slow;
+    }
 
+    public static ListNode middleNode2(ListNode head) {
+        if (head == null || head.next == null) {
+            return head;
+        }
+        ListNode fast = head.next;
+        ListNode slow = head;
+        while (fast != null && fast.next != null) {
+            slow = slow.next;
+            fast = fast.next.next;
+        }
         return slow;
     }
 }
