@@ -12,6 +12,6 @@ public class 把数组排成最小的数2 {
     }
 
     public static String minNumber(int[] nums) {
-
+        return "";
     }
 }
