@@ -39,7 +39,7 @@ public class 归并排序6 {
     }
 
     /**
-     * 对 arr 排序，
+     * 对 arr 合并
      *
      * @param arr   待合并数组
      * @param left  待合并数组最小下标
