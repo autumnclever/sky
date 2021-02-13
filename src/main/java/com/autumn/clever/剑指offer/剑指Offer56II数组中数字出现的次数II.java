@@ -21,13 +21,6 @@ public class 剑指Offer56II数组中数字出现的次数II {
         if (nums == null || nums.length == 0) {
             return 0;
         }
-        int xoy = 0;
-        for (int num : nums) {
-            xoy ^= num;
-        }
-        for (int num : nums) {
-            xoy ^= num;
-        }
-        return xoy;
+        return 0;
     }
 }
