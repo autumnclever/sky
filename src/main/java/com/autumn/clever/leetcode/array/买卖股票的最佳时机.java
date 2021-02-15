@@ -22,7 +22,8 @@ package com.autumn.clever.leetcode.array;
 public class 买卖股票的最佳时机 {
     public static void main(String[] args) {
         int[] prices = {7, 1, 5, 3, 6, 4};
-        System.out.println(maxProfit2(prices));
+        int[] prices2 = {1, 4, 2};
+        System.out.println(maxProfit2(prices2));
     }
 
     public static int maxProfit(int[] prices) {

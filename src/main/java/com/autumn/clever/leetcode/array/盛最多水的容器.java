@@ -22,7 +22,8 @@ package com.autumn.clever.leetcode.array;
  */
 public class 盛最多水的容器 {
     public static void main(String[] args) {
-        int[] height = {1, 8, 6, 2, 5, 4, 8, 3, 7};
+//        int[] height = {1, 8, 6, 2, 5, 4, 8, 3, 7};
+        int[] height = {3, 1, 2, 5, 2, 4};
         System.out.println(maxArea(height));
     }
 
