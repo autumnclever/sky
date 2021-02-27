@@ -37,7 +37,8 @@ public class 盛最多水的容器 {
         int right = height.length - 1;
         while (left < right) {
             // 水槽的高度以矮的为准，如果遇到矮的那一个，缩小它所在的索引范围，力求找到一个比刚才大的
-            max = height[left] < height[right] ? Math.max(max, (right - left) * height[left++]) :
+            max = height[left] < height[right] ?
+                    Math.max(max, (right - left) * height[left++]) :
                     Math.max(max, (right - left) * height[right--]);
 
         }

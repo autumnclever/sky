@@ -9,6 +9,11 @@ import java.util.Map;
  * 你可以假设每种输入只会对应一个答案。但是，数组中同一个元素不能使用两遍。
  * <p>
  * 你可以按任意顺序返回答案。
+ * 输入：nums = [2,7,11,15], target = 9
+ * 输出：[0,1]
+ * 解释：因为 nums[0] + nums[1] == 9 ，返回 [0, 1] 。
+ * 输入：nums = [3,2,4], target = 6
+ * 输出：[1,2]
  * <p>
  * 来源：力扣（LeetCode）
  * 链接：https://leetcode-cn.com/problems/two-sum

@@ -17,14 +17,15 @@ package com.autumn.clever.剑指offer;
  */
 public class 剑指Offer67把字符串转换成整数 {
     public static void main(String[] args) {
-        System.out.println(strToInt3("words and 987"));
-        System.out.println(strToInt3(" "));
-        System.out.println(strToInt3("-91283472332"));
-        System.out.println(strToInt2("words and 987"));
-        System.out.println(strToInt2(" "));
-        System.out.println(strToInt2("-91283472332"));
-        System.out.println(Integer.MAX_VALUE);
-        System.out.println(Integer.MIN_VALUE);
+//        System.out.println(strToInt3("words and 987"));
+//        System.out.println(strToInt3(" "));
+//        System.out.println(strToInt3("-91283472332"));
+//        System.out.println(strToInt2("words and 987"));
+//        System.out.println(strToInt2(" "));
+//        System.out.println(strToInt2("-91283472332"));
+        System.out.println(strToInt2("     -117e40091539"));
+//        System.out.println(Integer.MAX_VALUE);
+//        System.out.println(Integer.MIN_VALUE);
     }
 
     public static int strToInt3(String str) {
@@ -92,7 +93,7 @@ public class 剑指Offer67把字符串转换成整数 {
         }
         int res = 0;
         int bndry = Integer.MAX_VALUE / 10;
-        System.out.println("bndry = " + bndry);
+//        System.out.println("bndry = " + bndry);
         int i = 1;
         int sign = 1;
         if (c[0] == '-') {

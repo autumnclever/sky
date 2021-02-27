@@ -2,22 +2,22 @@ package com.autumn.clever.sort;
 
 /**
  * @Author: zhangqiuying
- * @Date: 2021/2/3 下午10:51
+ * @Date: 2021/2/26 下午12:29
  */
-public class 快速排序11 {
+public class 快速排序12 {
     public static void main(String[] args) {
         int[] arr = {5, 2, 3, 1, 4};
-        quickSort(arr, 0, arr.length - 1);
+        sort(arr, 0, arr.length - 1);
         for (int i = 0; i < arr.length; i++) {
             System.out.println(arr[i]);
         }
     }
 
-    public static void quickSort(int[] nums, int left, int right) {
+    public static void sort(int[] nums, int left, int right) {
         if (left < right) {
             int index = getIndex(nums, left, right);
-            quickSort(nums, left, index - 1);
-            quickSort(nums, index + 1, right);
+            sort(nums, left, index - 1);
+            sort(nums, index + 1, right);
         }
     }
 
