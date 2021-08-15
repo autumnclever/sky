@@ -3,6 +3,7 @@ package com.autumn.clever.file2;
 import com.alibaba.fastjson.JSONObject;
 import com.autumn.clever.file.model.FileDTO;
 import com.autumn.clever.file2.read.ReadCountExcelByEventModel;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -57,5 +58,55 @@ public class ExcelFileController {
             System.out.println(e);
         }
         return false;
+    }
+
+    class 渣男 extends Exception {
+
+    }
+
+    class 妈宝男 extends Exception {
+
+    }
+
+    class 凤凰男 extends Exception {
+
+    }
+
+    class 林奕 extends Exception {
+
+    }
+
+    static class Man {
+    }
+
+    static class RealMan {
+    }
+
+    public static void main(String[] args) throws Exception {
+        try {
+            Man man = new Man();
+            找对象(man);
+        } catch (Exception man) {
+            if (man instanceof 渣男) {
+                throw new Exception("去找渣女吧，滚!");
+            } else if (man instanceof 妈宝男) {
+                throw new Exception("去找你妈妈去吧，滚！");
+            } else if (man instanceof 凤凰男) {
+                throw new Exception("你是全村的希望，不是我的希望，滚！");
+            } else if (!(man instanceof 林奕)) {
+                throw new Exception("滚！");
+            }
+        } finally {
+            RealMan 林奕 = new RealMan();
+            嫁人(林奕);
+        }
+    }
+
+    public static void 找对象(Man man) {
+
+    }
+
+    public static void 嫁人(RealMan realMan) {
+
     }
 }
