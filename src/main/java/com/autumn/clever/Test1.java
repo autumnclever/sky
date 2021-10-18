@@ -11,8 +11,11 @@ import static java.util.Calendar.*;
  */
 public class Test1 {
     public static void main(String[] args) {
-        Date date = getOneDayAgoHourDate(12);
-        System.out.println(date.toString());
+//        Date date = getOneDayAgoHourDate(12);
+//        System.out.println(date.toString());
+        Integer i = 2;
+
+        System.out.println(i.equals(null));
     }
 
     public static Date getOneDayAgoHourDate(int hour) {
@@ -23,4 +26,6 @@ public class Test1 {
         calendar.set(MILLISECOND, 0);
         return calendar.getTime();
     }
+
+
 }
