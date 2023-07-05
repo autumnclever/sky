@@ -16,6 +16,7 @@
 
     <properties>
         <java.version>1.8</java.version>
+        <jodd-http.version>5.0.6</jodd-http.version>
     </properties>
 
     <dependencies>
@@ -135,6 +136,12 @@
 <!--            <scope>provided</scope>-->
         </dependency>
 
+        <!--  jodd-http  -->
+        <dependency>
+            <groupId>org.jodd</groupId>
+            <artifactId>jodd-http</artifactId>
+            <version>${jodd-http.version}</version>
+        </dependency>
     </dependencies>
 
     <build>
