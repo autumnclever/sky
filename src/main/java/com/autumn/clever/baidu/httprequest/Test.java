@@ -43,7 +43,7 @@ public class Test {
         String response = "";
         long start = System.currentTimeMillis();
 //        String url = "http://10.41.21.155:8015/service/ocpc";
-        String url = "http://10.41.67.76:8033/service/ocpc";
+        String url = "http://10.186.91.26:8012/service/ocpc";
         try {
             response = sendPostDataByJson(url, requestJson, "", "UTF-8");
             if (StringUtils.isBlank(response)) {
@@ -104,7 +104,7 @@ public class Test {
         StringEntity stringEntity = new StringEntity(json, "UTF-8");
 
 //        stringEntity.setChunked(false);
-        stringEntity.setContentEncoding(encoding);
+//        stringEntity.setContentEncoding(encoding);
         httpPost.setEntity(stringEntity);
         RequestConfig requestConfig = RequestConfig.custom()
                 .setSocketTimeout(5000)
