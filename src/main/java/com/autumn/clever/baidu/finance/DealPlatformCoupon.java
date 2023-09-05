@@ -30,7 +30,7 @@ public class DealPlatformCoupon {
 
     private static String FILE_PAY_TIME = "/file/july/allSubOrderPayTime.txt";
 
-    private static String FILE_RESULT = "/Users/zhangqiuying/autumn/sky/src/main/resources/file/july/result.txt";
+    private static String FILE_RESULT = "/Users/zhangqiuying/autumn/sky/src/main/resources/file/july/result2.txt";
 
     public static void main(String[] args) {
         List<String> orderList = FileUtils.readLinesFromClasspath(FILE_ORDER);

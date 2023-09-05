@@ -19,7 +19,5 @@ public class 去重分组 {
         list = list.stream().distinct().collect(Collectors.toList());
         System.out.println("----------------------------");
         list.forEach(x -> System.out.print(x + ","));
-
-        List<List<Integer>> lists = list.stream().spliterator().
     }
 }
