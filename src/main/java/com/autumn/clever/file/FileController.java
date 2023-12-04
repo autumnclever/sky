@@ -137,10 +137,15 @@ public class FileController {
     }
 
     public static void main(String[] args) {
-        String salePriceStr = "0.01";
-        Double salePriceDou = Double.valueOf(salePriceStr) * 100;
-        Long salePrice = salePriceDou.longValue();
-        System.out.println(salePrice);
+//        String salePriceStr = "0.01";
+//        Double salePriceDou = Double.valueOf(salePriceStr) * 100;
+//        Long salePrice = salePriceDou.longValue();
+//        System.out.println(salePrice);
+
+        Long fullPrice = 150000L;
+
+        String str = String.format("满%.2f可用", (double) fullPrice / 100);
+        System.out.println(str);
     }
 
     private static final String[] chTitles2 = {"spuId", "skuId", "salePrice", "saleStock"};

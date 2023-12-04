@@ -37,6 +37,24 @@ public class FixTwicePay {
     public static Map<String, Object> buildRequestParamMap() {
         // 构造子订单信息
         SyncCashierSubOrderDto syncCashierSubOrderDto = new SyncCashierSubOrderDto();
+        syncCashierSubOrderDto.setTpOrderId("93016574423456");
+        syncCashierSubOrderDto.setTotalMoney(9900L);
+        syncCashierSubOrderDto.setAppKey("MM5yVh");
+        syncCashierSubOrderDto.setDealId(235048387L);
+        syncCashierSubOrderDto.setTpMarketingDetail("");
+        syncCashierSubOrderDto.setIsConsumed(PayCallbackResponse.ConsumeStatus.NOCONSUMED.value());
+        syncCashierSubOrderDto.setSplitMoney(198800L);
+        syncCashierSubOrderDto.setSplitRatio("0");
+
+        syncCashierSubOrderDto.setTpOrderId("93016963503456");
+        syncCashierSubOrderDto.setTotalMoney(9900L);
+        syncCashierSubOrderDto.setAppKey("MM5yVh");
+        syncCashierSubOrderDto.setDealId(235048387L);
+        syncCashierSubOrderDto.setTpMarketingDetail("");
+        syncCashierSubOrderDto.setIsConsumed(PayCallbackResponse.ConsumeStatus.NOCONSUMED.value());
+        syncCashierSubOrderDto.setSplitMoney(198800L);
+        syncCashierSubOrderDto.setSplitRatio("0");
+
         syncCashierSubOrderDto.setTpOrderId("61195489753419");
         syncCashierSubOrderDto.setTotalMoney(200000L);
         syncCashierSubOrderDto.setAppKey("MMUoSi");
@@ -52,10 +70,10 @@ public class FixTwicePay {
         String orders = JsonUtils.toJson(syncCashierSubOrderList);
         Map<String, Object> requestParam = new HashMap<>();
 
-        Long orderId = 97114732893347L;
-        Long tpOrderId = 91196153813419L;
-        String appKey = "MMUKPa";
-        String dealId = "1359394905";
+        Long orderId = 102766990958632L;
+        Long tpOrderId = 93017073013456L;
+        String appKey = "MM5yVh";
+        String dealId = "235048387";
         requestParam.put("orderId", orderId);
         requestParam.put("tpOrderId", tpOrderId);
         requestParam.put("orders", orders);
@@ -63,17 +81,7 @@ public class FixTwicePay {
         requestParam.put("dealId", dealId);
 
 
-        String privateKey = "MIICdgIBADANBgkqhkiG9w0BAQEFAASCAmAwggJcAgEAAoGBALoj8vENGRucsuSGMm/rcsgd"
-                + "+NUl3onPyd1jIY332xJkKvjZEnEnb4ZsRmFT7c2KoWeb3+KeWAL88iJ0gxPL3QgPcGos/bWS29JTjUOWA1esJfMQSgKBsqu"
-                + "/euSnKjF5c5QC0hvPXnFlXCMoDtpprIxI9Z1C8O+i6Va3Y4gu8mTTAgMBAAECgYB9jXP3rbsKyeZMiEwK+8g"
-                + "/PSAzPUjesd5aStw+Mzl8LT5i/aAX3N63z96lFYRoSKLYDOa1p9J7qXv1S5uCRdb+yxXi"
-                + "+67d06FfHs2cdWVfUjTWiIgyXQHbKVDH7oc/4BcygxKCP9thRlVfykfRJhsjtPFBC42XSmvx4N5xcKS28QJBAOOTGMnYPQCjXf"
-                + "/lQLOBjGlXqCkN4SjETjSSJUjrymCAr6jIYTa8ZqoDDMgaiWAz/AV0bIwPfIdPQjuxCfmsOPkCQQDRY"
-                + "/UGo3wLAyFmzbXhEOPwkGdOlJXtyW8WxdS5a1uDWZ/YllHrDLiJ+uSPmFUaVVBGuA/eKJ/YQqvz"
-                + "/vhEyysrAkEAtZa8YuMe2hGBgh0mIZYvuibt0cR3c5YgaSZsheFP3O0SPXWWzJxMt0AzxMAX+iHA6YFa0"
-                + "+/PiBCgYw0DTqwz0QJARoeP0iOhNahhSNqDqALjdHV/hrV/5u+Rzq7mX2ptEcpPkEnZ3"
-                + "/2R71AmSsP57nvMJXX8Sk2Owe57Mx2wDKQOrwJAE8100wg1Q6dU3vsdvJ7rRlWnoTHOnkgaRY"
-                + "+YcLPMmyA9dAekSiCF52ETkREN6lfWrI0r/idF7pqRMUUbKLxUDA==";
+        String privateKey = "MIICdwIBADANBgkqhkiG9w0BAQEFAASCAmEwggJdAgEAAoGBANUENzMyVbHdK2kHJ4jXIaLx1Q33DRgKZRm5Kks/YlQmK6inKDq4nbTd3VAU5YDGcUua1QSe+H8IbhGcYjZ00eFqBY1yIQj41KoDxMHafhfCQpKnkWIkVEbefFLGZwDT6zNh/TbBB1wHuqXyJOAm/drbZIRNZaPPnq8P/QZifMWzAgMBAAECgYEAhxYyT2RXVgF1WxivaKdNbIFCZKXMhvdooAR+HtQmbkj6nOzMpViYoq+kfvmRhbXS+WhKOLD708uryb1Lx08UHV8giIIyUYLDdY3shbVLICp0IF0mTuc4TTQ69xEt+YxUGYLsGL/4xQrCBi8oxGi5LvGrfApAbU1iXKd5l4hFtfkCQQD92HoF4/rNpBKdqyjkju5GvdXM9xZD7adMNT6Qhh3M97IPBC8+2HPio/YfQ2TGNAR9IwbV4rOf/Ai/Gv9n9yl1AkEA1tMH1pXd1v5/2SYfTZrqAQhbjHa6/JktyzQt7Q2SBSYKKPK2KgYGe+IobZFRMBSl5JN20Opd/qsecR7wkIglhwJBAITR5w77+bftuHvdGdl1XAGRxLOpOXIzgEzksybFtgQQOo+W3e2hLgmRRu+WwLzgbNTZJfN12gzEwALWansInR0CQFRJxL+LWdlrTdpzvMCEUeBJ2THJvCA0MeWS+ZoTQwHGJSJf6N2gM5cT62ziIYrN7zE6MtpRusObfHxB+X2cDa0CQC2H4gelpbi8u1nKCusopBRtn6XpwB4Jrcji00m6Df15Ahcjgfrxp8R0MAIpTuwPmsxpEArLihTiPt0lIMvDs8c=";
 
         requestParam.put("rsaSign", getRsaSignForTest(
                 String.valueOf(orderId),

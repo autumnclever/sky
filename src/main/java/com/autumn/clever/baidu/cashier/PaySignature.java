@@ -18,6 +18,7 @@ import java.security.spec.PKCS8EncodedKeySpec;
 import java.security.spec.X509EncodedKeySpec;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -46,6 +47,7 @@ public class PaySignature {
         log.info("sign detail: sorted params=[{}]  rsa sign=[{}]", sortedParamsContent, rsaSign);
         return rsaSign;
     }
+
 
     /**
      * 获取签名，参数值为object类型
@@ -87,6 +89,14 @@ public class PaySignature {
                     "RSAcontent = " + data);
         }
     }
+
+//    public static void main(String[] args) {
+//        Map<String, String> sortedParams = new HashMap<>();
+//        sortedParams.put("unitPrice","10000");
+//        sortedParams.put("orderId","103391692583399");
+//        sortedParams.put("payTime","103391692583399");
+//        checkSignWithRsa();
+//    }
 
     /**
      * 签名验证

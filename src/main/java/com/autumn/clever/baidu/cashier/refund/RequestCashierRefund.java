@@ -24,7 +24,10 @@ import java.util.Map;
 @Slf4j
 public class RequestCashierRefund {
 
-    private static String CASHIER_REFUND_URL = "http://refund.trade.baidu-int.com/open/refund/applyOrderRefund";
+    // 线上
+//    private static String CASHIER_REFUND_URL = "http://refund.trade.baidu-int.com/open/refund/applyOrderRefund";
+    // 线下
+    private static String CASHIER_REFUND_URL = "http://10.24.3.194:8845/open/refund/applyOrderRefund";
 
     // 回调地址
     private static String cashierOrderRefundNotifyUrl = "http://refund.trade.baidu-int.com/open/refund/applyOrderRefund";
@@ -35,13 +38,14 @@ public class RequestCashierRefund {
         try {
             Long nanoTime =  System.nanoTime();
 //            Map<String, Object> reqParams = buildReqParams(5, 8176248511L, 97050743137048L, null, 91178915833488L, "MMNbD7", nanoTime, "25", 9900L, 1650L);
-            Map<String, Object> reqParams = buildReqParams(5, 3700312220L, 101845147763046L, null, 92692160553006L, "MMUuCh", nanoTime, "40", 12800L, 8800L);
+            Map<String, Object> reqParams = buildReqParams(5, 2872910650L, 3193552842941L, null, 175149033365L, "My3jZQ", nanoTime, "线下测试单", 2400L, 2400L);
             httpResponse = HttpRequest.post(CASHIER_REFUND_URL).timeout(3000).form(reqParams).send();
             log.info("request_cashier_monitor_refund using: post:[{}], params[{}]", CASHIER_REFUND_URL, reqParams);
         } catch (Exception e) {
             log.error("请求收银台退款失败，httpResponse：{}", JacksonUtil.toJSONString(httpResponse), e);
         }
 
+        String str = "{\"useLimitDTO\":{\"userTotalLimitNum\":10,\"spuUserLimitNum\":5,\"userDayLimitNum\":4,\"spuUserDayLimitNum\":3}}";
         log.info("请求收银台退款成功，httpResponse：{}", JacksonUtil.toJSONString(httpResponse));
     }
 

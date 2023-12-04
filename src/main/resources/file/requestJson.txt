@@ -1,1 +1,0 @@
-'{"services":[{"type":0,"values":["ocpcspamq"]}],"req_msg":{"type":0,"value":"sc=two_e_commerce_tag&cuid=_8Hyu0ilSuYL8vfqgavFagurHulPPHavjPSpi_iO-t84kSPp_8vs8L9zA&productid=1008"}}'
