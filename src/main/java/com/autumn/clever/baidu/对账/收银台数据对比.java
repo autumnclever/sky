@@ -27,8 +27,8 @@ public class 收银台数据对比 {
     public static Long xiaodian_refund = 0L;
 
     public static void main(String[] args) throws IOException {
-        String shouyintai = "/Users/zhangqiuying/autumn/sky/src/main/resources/file/october/20231031_duxiaodian.csv";
-        String xiaodian = "/Users/zhangqiuying/autumn/sky/src/main/resources/file/october/OctoberOrderDetail2.txt";
+        String shouyintai = "/Users/zhangqiuying/autumn/sky/src/main/resources/file/november/20231130_duxiaodian.csv";
+        String xiaodian = "/Users/zhangqiuying/autumn/sky/src/main/resources/file/november/NovemberOrderDetail4.txt";
 
 
         Map<Long, Long> consumeMap = new HashMap<>();
@@ -51,7 +51,7 @@ public class 收银台数据对比 {
         });
 
         // 结果文件
-        FileWriter fileWriter = new FileWriter("/Users/zhangqiuying/autumn/sky/src/main/resources/file/october/result2.txt", true);
+        FileWriter fileWriter = new FileWriter("/Users/zhangqiuying/autumn/sky/src/main/resources/file/november/result5.txt", true);
         BufferedWriter bufferWriter = new BufferedWriter(fileWriter);
         try {
             Stream<String> xdLines = Files.lines(Paths.get(xiaodian));
