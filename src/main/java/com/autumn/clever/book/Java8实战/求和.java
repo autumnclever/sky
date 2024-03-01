@@ -16,10 +16,14 @@ public class 求和 {
 
     public static void main(String[] args) {
 
-        Spu spu1 = new Spu(100, 200, 120);
-        Spu spu2 = new Spu(90, 300, 100);
-        Spu spu3 = new Spu(120, 100, 100);
+        Spu spu1 = new Spu(0, 200, 0);
+        Spu spu2 = new Spu(0, 300, 1);
+        Spu spu3 = new Spu(12, 200, 2);
         List<Spu> spuList = Arrays.asList(spu1, spu2, spu3);
+
+//        spuList.stream().map(Spu::getStock).reduce((a, b) -> a + b).ifPresent(System.out::println);
+//        int stock = spuList.stream().map(Spu::getStock).reduce(0, Integer::sum);
+//        System.out.println(stock);
 
 //        Map<LongSummaryStatistics, LongSummaryStatistics> map = spuList.stream().collect(Collectors.toMap(Collectors.summarizingLong(Spu::getStock), Collectors.summarizingLong(Spu::getRestStock)));
 
